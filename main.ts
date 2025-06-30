@@ -1,6 +1,8 @@
 input.onPinPressed(TouchPin.P0, function () {
     if (lock == 1) {
         lock = 0
+        music.setVolume(38)
+        music.play(music.stringPlayable("E F G - - - - - ", 500), music.PlaybackMode.InBackground)
         basic.showLeds(`
             . . . . .
             . . . . #
@@ -31,6 +33,8 @@ input.onButtonPressed(Button.AB, function () {
     }
 })
 radio.onReceivedString(function (receivedString) {
+    music.setVolume(38)
+    music.play(music.stringPlayable("C C5 D B E - - - ", 1000), music.PlaybackMode.InBackground)
     basic.showString(receivedString)
 })
 input.onButtonPressed(Button.B, function () {
@@ -102,4 +106,5 @@ basic.forever(function () {
         basic.showNumber(o)
         radio.setGroup(o)
     }
+    music.setBuiltInSpeakerEnabled(true)
 })
