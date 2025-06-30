@@ -50,14 +50,12 @@ input.onLogoEvent(TouchButtonEvent.Pressed, function () {
     index = 0
     lock = 1
     while (lock == 1) {
-        if (input.buttonIsPressed(Button.A) || input.buttonIsPressed(Button.B) || input.logoIsPressed()) {
-            if (alphabet[index] == " ") {
-                basic.showString("_")
-            } else {
-                basic.showString("" + (alphabet[index]))
-            }
-            current_letter = alphabet[index]
+        if (alphabet[index] == " ") {
+            basic.showString("_")
+        } else {
+            basic.showString("" + (alphabet[index]))
         }
+        current_letter = alphabet[index]
     }
 })
 let sublock = 0
