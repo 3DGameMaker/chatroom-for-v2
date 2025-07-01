@@ -10,7 +10,7 @@ input.onPinPressed(TouchPin.P0, function () {
             # . # . .
             . # . . .
             `)
-        radio.sendString(text)
+        radio.sendString(" " + flashstorage.get("U") + ": " + text)
         text = ""
         current_letter = ""
     }
@@ -27,6 +27,9 @@ input.onButtonPressed(Button.A, function () {
             index = 28
         }
     }
+})
+input.onPinPressed(TouchPin.P2, function () {
+    o = 0
 })
 input.onButtonPressed(Button.AB, function () {
     if (lock == 1) {
@@ -72,6 +75,8 @@ let lock = 0
 let alphabet: string[] = []
 let o = 0
 o = parseFloat(flashstorage.getOrDefault("o", "0"))
+// This is where you can change the username
+flashstorage.put("U", "Lazer")
 alphabet = [
 "a",
 "b",
