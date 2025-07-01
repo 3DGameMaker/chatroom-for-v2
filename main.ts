@@ -16,6 +16,7 @@ input.onPinPressed(TouchPin.P0, function () {
     }
 })
 input.onButtonPressed(Button.A, function () {
+    music.play(music.createSoundExpression(WaveShape.Triangle, 43, 1500, 255, 0, 100, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
     if (lock == 0) {
         o += -1
         flashstorage.put("o", convertToText(o))
@@ -38,6 +39,7 @@ radio.onReceivedString(function (receivedString) {
     basic.showString(receivedString)
 })
 input.onButtonPressed(Button.B, function () {
+    music.play(music.createSoundExpression(WaveShape.Triangle, 43, 1500, 255, 0, 100, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
     if (lock == 0) {
         o += 1
         flashstorage.put("o", convertToText(o))
