@@ -23,7 +23,7 @@ input.onButtonPressed(Button.A, function () {
         if (!(index < 1)) {
             index += -1
         } else {
-            index = 26
+            index = 28
         }
     }
 })
@@ -42,7 +42,7 @@ input.onButtonPressed(Button.B, function () {
         o += 1
         flashstorage.put("o", convertToText(o))
     } else {
-        if (!(index > 25)) {
+        if (!(index > 28)) {
             index += 1
         } else {
             index = 0
@@ -97,7 +97,9 @@ alphabet = [
 "x",
 "y",
 "z",
-" "
+" ",
+"!",
+"?"
 ]
 lock = 0
 text = ""
